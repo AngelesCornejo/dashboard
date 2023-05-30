@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/icono.png">
+    <!--Boxicons-->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!--MyStyle-->
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Register</title>
+</head>
+<body>
+    <div id="logos">
+        <img id="img1" src="/img/ipn.png" > 
+        <div id="title"><p>Sistema para el monitoreo</p> <p>de la cantidad de nitrógeno</p> </div>
+        <img id="img2" src="/img/upiita.png" > 
+    </div>
+    <div id="general">
+        <div class="login">
+            <form action="/signup" method="post">
+                <div class="titlehead">Registrarse</div>
+                <div class="section">
+                    <div class="title"> Usuario </div>
+                    <div class="field"><i class='bx bxs-envelope'></i><input type="email" name="email" placeholder="Insertar email"></div>
+                        <div class="container">
+                            <% if(signupMessage.length>0) {%>
+                                <div class="alert"><i class='bx bxs-error-circle'></i><%=signupMessage %> </div>
+                            <%} %>                   
+                        </div>
+                </div>
+                <div class="section">
+                    <div class="title"> Contraseña </div>
+                    <div class="field"><i class='bx bxs-key'></i><input type="password" name="password" placeholder="Insertar contraseña"></div>
+                    <div class="container">
+                        <% if(signinPasswordMessage.length>0) {%>
+                            <div class="alert"><i class='bx bxs-error-circle'></i><%=signinPasswordMessage %></div>
+                        <%} %>        
+                    </div>
+                </div>
+                <div class="boton">
+                    <button type="submit" class="btn">Ingresar</button>
+                </div>
+                    <!--<div class="button"><input type="submit" value="Registrarse"></div>-->
+                <div class="button"><a href="/signin">Iniciar sesión</a></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

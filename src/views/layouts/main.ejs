@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/img/icono.png">
+    <!--Boxicons-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--Estilos propios-->
+    <link rel="stylesheet" href="/css/stylemain.css">
+    <!--Estilos calendario-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <title>Monitoreo Nitrógeno</title>
+</head>
+<body>    
+    <div id="logos">
+        <img id="img1" src="/img/ipn.png" > 
+        <div id="title">Sistema para el monitoreo de la cantidad de nitrógeno </div>
+        <img id="img2" src="/img/upiita.png" > 
+    </div>
+    <!--SIDEBAR*/-->
+    <section id="sidebar">
+        <a href="/inicio" class="brand">
+            <i class='bx bxs-leaf'></i>
+            <span class="text">Menú principal</span>
+        </a>
+        <ul class="side-menu top">
+            <li id="linkInicio">
+                <a href="/inicio">
+                    <i class='bx bx-scatter-chart'></i>
+                    <span class="text">Monitoreo</span>
+                </a>
+            </li>
+            <li id="linkRegist">
+                <a href="/registros">
+                    <i class='bx bx-table'></i>
+                    <span class="text">Registros</span>
+                </a>
+            </li>
+            <li id="linkHisto">
+                <a href="/histograma">
+                    <i class='bx bx-bar-chart-square'></i>
+                    <span class="text">Histograma</span>
+                </a>
+            </li>
+            <li id="linkAnalis">
+                <a href="#">
+                    <i class='bx bx-line-chart'></i>
+                    <span class="text">Análisis</span>
+                </a>
+            </li>
+        </ul> 
+        <ul class="side-menu">
+            <li id="linkInfo">
+                <a href="/info" class="inf">
+                    <i class='bx bx-info-circle' ></i>
+                    <span class="text">Acerca de</span>
+                </a>
+            </li>            
+            <li>
+                <a href="/logout" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    <span class="text">Salir</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <!--SIDEBAR-->
+
+    <!--CONTENT-->
+    <section id="content">
+        <!--NAVBAR-->
+        <nav>
+            <i class='bx bx-menu'></i>
+          <!--  <a href="/inicio" class="nav-link"> Nodos </a>-->
+                <div class="form-input">
+                    <button id="btn1" onclick="functionBtn1()">Nodo 1</button>
+                    <button id="btn2" onclick="functionBtn2()">Nodo 2</button>
+                    <button id="btn3" onclick="functionBtn3()">Nodo 3</button>
+                    <button id="btn4" onclick="functionBtn4()">Nodo 4</button>
+                    <button id="btnC" onclick="functionBtnC()" class="active">Nodo Central</button>
+                </div>
+            <!--location.href='/inicio' para redireccionar con el boton
+            <img id="img1" src="/img/ipn.png" > 
+            <img id="img2" src="/img/upiita.png" > -->
+        </nav>
+        <!--NAVBAR-->
+    </section>
+    <%- body %>
+</body>
+</html>
+
+
+

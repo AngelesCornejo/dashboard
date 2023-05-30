@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+*{ 
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --poppins: 'Poppins', sans-serif;
+  --lato: 'Lato', sans-serif;
+}
+
+
+/*body{  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}*/
+
+#img1{
+  height: 100px;
+  position: absolute;
+  left: 250px;
+}
+#img2{
+  height: 100px;
+  position: absolute;
+  right: 250px;
+}
+
+#logos{
+  position: fixed;
+  width: 100%;
+  border-bottom: rgb(232,237,235) solid 2px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#logos #title{
+  font-size:18pt;
+  font-family: var(--poppins);
+  text-align: center;
+  /*font-weight: 700;*/
+}
+#general{
+  position: fixed;
+  overflow: auto;
+  /*display: flex;
+  align-items: center;
+  justify-content: center;*/
+  height:calc(100% - 100px);
+  width:100%;
+  top: 100px;
+  /*background-color: #B5D5C5;*/
+  background-color: #eee;
+}
+
+#general .login{
+  border: 2px solid #aaaaaa;
+  width: 400px;
+  border-radius: 15px;
+  padding: 20px;
+  height: 410px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 53.5px;
+  margin-bottom: 53.5px;
+}
+
+#general .login form{
+  width: 100%;
+  background-color: white;
+}
+
+
+
+#general input[type=email], #general input[type=password] {
+  font-size: 18px;
+  outline: none;
+  padding: 10px;
+  width: calc(100% - 20px);
+  border: 2px solid #eee;
+  border-radius: 15px;
+}
+
+/*#general .boton{
+  padding: 10px 0;
+}*/
+
+#general .boton button[type=submit]{
+  /*border-color: #eee;*/
+  border: 0px #eee;
+  outline: 0;
+  background-color: #CDE990;
+  font-size: 14pt;
+  /*color:white;*/
+  padding: 10px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 100%;
+  height:50px;
+  font-family: var(--poppins);
+  font-weight: 500;
+}
+
+#general .boton button[type=submit]:hover {
+  border:1px solid #eee;
+  transition: .3s ease;
+  /*background-color: white;*/
+}
+
+#general .section .btn {
+  justify-content: center;
+}
+
+/*#general .section{ padding: 10px 0; }*/
+
+#general .section .title{
+  padding: 0 0 10px; 
+  font-family: var(--lato);
+}
+
+
+#general .titlehead{
+  /*background-color: #E1FFB1;*/
+  font-size:22pt;
+  font-family: var(--poppins);
+  text-align: center;
+  font-weight: 700;
+  /*border-radius: 0 0 15px 15px;
+  border:  2px solid #aaaaaa;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*padding: 0 0 10px;*/
+}
+
+#general .title{font-size: 16pt;}
+
+#general .button{
+  padding: 10px 0;
+  text-align:center;
+}
+
+#general .button a{
+  color: #567189;
+  font-size:14pt;
+  font-family: var(--poppins);
+}
+
+#general .login form .section .container .alert{
+  background-color: #ffd7cb;
+  width: 100%;
+  /*border-radius: 15px;*/
+  border: 2px solid #ff7851;
+  text-align: center;
+  font-size: 16pt;
+  height: 40px;
+  /*padding: 10px 0;*/
+  margin: 10px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#general .login form .section .container{
+  padding: 5px 0;
+}
+
+#general form .section .field{
+  /*border: 2px solid #eee;
+  border-radius: 5px;*/
+  padding: 0 0 0 5px;
+}
+
+#general .bx{
+  width: 20px;
+  padding: 0 5px 0 0;;
+}
+
+#general .bx.bxs-error-circle{
+  padding:0;
+}
+
+@media screen and (max-width: 1050px){
+  /*#logos #title{
+    font-size:12pt
+  }*/
+  #img1{
+    height: 100px;
+    position: absolute;
+    left: 200px;
+  }
+  #img2{
+    height: 100px;
+    position: absolute;
+    right: 200px;
+  }
+}
+
+@media screen and (max-width: 950px){
+  /*#logos #title{
+    font-size:12pt
+  }*/
+  #img1{
+    height: 100px;
+    position: absolute;
+    left: 150px;
+  }
+  #img2{
+    height: 100px;
+    position: absolute;
+    right: 150px;
+  }
+}
+
+@media screen and (max-width: 860px){
+  /*#logos #title{
+    font-size:12pt
+  }*/
+  #img1{
+    height: 100px;
+    position: absolute;
+    left: 10px;
+  }
+  #img2{
+    height: 100px;
+    position: absolute;
+    right: 10px;
+  }
+}

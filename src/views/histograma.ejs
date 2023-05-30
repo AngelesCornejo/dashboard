@@ -1,0 +1,13 @@
+<%- layout('layouts/main.ejs') %>
+<% var currentpage = 'histo'; %>
+        <!--GRAFICAS-->
+    <section id="contenido">
+        <div class="principal">
+            <div id="graficas"></div>
+        </div>
+    </section>
+
+    <!--GRAFICAS-->
+    <script> currentpage = '<%-currentpage%>' </script>
+    <script src="/javascript/script.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>

@@ -1,0 +1,50 @@
+<%- layout('layouts/main.ejs') %>
+<% var currentpage = 'registros'; %>
+<% var defaultbtn = 'btnC'; %>
+
+    <section id="contenido">
+        <div class="registros">
+            <div class="cal">
+                <div class="fields">
+                    <label><b>Fecha:</b></label>
+                    <i class='bx bx-calendar'></i><input id="date" type="date" placeholder="Selecciona una fecha">
+                </div>
+                <div class="fields">
+                    <label><b>Hora:</b></label>
+                    <i class='bx bxs-time'></i><input id="hour" type="time" placeholder="Selecciona una hora">
+                </div>
+                <button class="btnCal" onclick="functionCalendar()">Buscar</button>
+                <button class="btnCal" onclick="functionReload()"><i class='bx bx-refresh'></i></button>
+            </div>
+            <div class="tabla"><table><thead>
+                <th>Medida</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+              </thead>
+              <tbody id="tablaRegistros">
+              </tbody>
+            </table></div>
+        </div>
+    </section>
+
+    <script> currentpage = '<%-currentpage%>' </script>
+    <script> currBtn = '<%-defaultbtn%>' </script>
+    <script src="/javascript/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
+    <script>
+        flatpickr("input[type=date]", {
+        /*altInput: true,
+        altFormat: "F j, Y",*/
+        dateFormat: "Y-m-d",
+        locale: "es"
+        });
+
+        flatpickr("input[type=time]", {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        /*time_24hr: true*/
+        });
+    </script>

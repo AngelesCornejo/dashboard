@@ -1,0 +1,23 @@
+<%- layout('layouts/main.ejs') %>
+<% var currentpage = 'inicio'; %>
+        <!--GRAFICAS-->
+    <section id="contenido">
+        <div class="principal">
+            <div class="result">
+                <label><b>Promedio cantidad de nitrógeno</b></label>
+                <input type="text">
+                <label><b>Cantidad recomendada de fertilizante</b></label>
+                <input type="text">
+            </div>
+            <div id="graficas"></div>
+        </div>
+    </section>
+
+    <!--GRAFICAS-->
+    <script> currentpage = '<%-currentpage%>' </script>
+    <script src="/javascript/script.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+    
+    
+    
