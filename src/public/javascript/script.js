@@ -139,22 +139,24 @@ if (flag == ''){
 
 
 //CONSULTAS
-function peticionFetch(cad){
-    url='http://127.0.0.1:3000/'+cad;
-    fetch(url,{
-    method: 'GET' }).then(response=>response.json()).then(data=>{
-        if(currentpage == 'inicio') { 
-            most(data, currentpage); 
-        } else if(currentpage == 'histo'){
-            most(data, currentpage);
-        }else if(currentpage == 'registros') { 
-            document.getElementById('tablaRegistros').innerHTML=generaTabla(data);
-            document.getElementById('date').value='';
-            document.getElementById('hour').value=''; 
-            //datos=data;
-        }
-    })
-}
+setInterval(async function(){
+    function peticionFetch(cad){
+        url='http://127.0.0.1:3000/'+cad;
+        fetch(url,{
+        method: 'GET' }).then(response=>response.json()).then(data=>{
+            if(currentpage == 'inicio') { 
+                most(data, currentpage); 
+            } else if(currentpage == 'histo'){
+                most(data, currentpage);
+            }else if(currentpage == 'registros') { 
+                document.getElementById('tablaRegistros').innerHTML=generaTabla(data);
+                document.getElementById('date').value='';
+                document.getElementById('hour').value=''; 
+                //datos=data;
+            }
+        })
+    }
+}, 5000)
 
 //GRAFICAS
 function most (datos, page){  
