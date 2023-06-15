@@ -1,5 +1,6 @@
 <%- layout('layouts/main.ejs') %>
 <% var currentpage = 'inicio'; %>
+<% var defaultbtn = 'btnC'; %>
         <!--GRAFICAS-->
     <section id="contenido">
         <div class="principal">
@@ -15,6 +16,7 @@
 
     <!--GRAFICAS-->
     <script> currentpage = '<%-currentpage%>' </script>
+    <script> currBtn = '<%-defaultbtn%>' </script>
     <script src="/javascript/script.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     

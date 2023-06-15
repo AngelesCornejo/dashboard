@@ -58,15 +58,64 @@ let lista = [
     }
 ]
 
-let functionBtn1 = () => {peticionFetch('nodo1'); currBtn='btn1'}  
+let functionBtn1 = () => {
+    peticionFetch('nodo1');
+    if(currentpage == 'inicio'){
+        clearInterval(a);   
+        a = setInterval(async function(){ peticionFetch('nodo1');}, 5000);
+        currBtn='btn1';
+    } else {
+        clearInterval(a);
+        peticionFetch('nodo1'); currBtn='btn1';
+    }
+}
+let functionBtn2 = () => {
+    peticionFetch('nodo2');
+    if(currentpage == 'inicio'){
+        clearInterval(a);   
+        a = setInterval(async function(){ peticionFetch('nodo2');}, 5000);
+        currBtn='btn2';
+    } else {
+        clearInterval(a);
+        peticionFetch('nodo2'); currBtn='btn2';
+    }
+}
 
-let functionBtn2 = () => {peticionFetch('nodo2'); currBtn='btn2'}
+let functionBtn3 = () => {
+    peticionFetch('nodo3');
+   if(currentpage == 'inicio'){
+        clearInterval(a);   
+        a = setInterval(async function(){ peticionFetch('nodo3');}, 5000);
+        currBtn='btn3';
+    } else {
+        clearInterval(a);
+        peticionFetch('nodo3'); currBtn='btn3';
+    }
+}
 
-let functionBtn3 = () => {peticionFetch('nodo3'); currBtn='btn3'}
+let functionBtn4 = () => {
+    peticionFetch('nodo4');
+    if(currentpage == 'inicio'){
+        clearInterval(a);   
+        a = setInterval(async function(){ peticionFetch('nodo4');}, 5000);
+        currBtn='btn4';
+    } else {
+        clearInterval(a);
+        peticionFetch('nodo4'); currBtn='btn4';
+    }
+}
 
-let functionBtn4 = () => {peticionFetch('nodo4'); currBtn='btn4'}
-
-let functionBtnC = () => {peticionFetch('datosnodos'); currBtn='btnC'}
+let functionBtnC = () => {
+    peticionFetch('datosnodos');
+    if(currentpage == 'inicio'){
+        clearInterval(a);   
+        a = setInterval(async function(){ peticionFetch('datosnodos');}, 5000);
+        currBtn='btnC';
+    } else {
+        clearInterval(a);
+        peticionFetch('datosnodos'); currBtn='btnC';
+    }
+}
 
 let functionReload = () => {
     switch (currBtn){
@@ -131,32 +180,32 @@ let functionCalendar = () => {
 
   
 
-if (flag == ''){
-   // setInterval(function (){
+if (currBtn == 'btnC' ){
+    peticionFetch('datosnodos')
+    a = setInterval(function (){
         peticionFetch('datosnodos')
-    //}, 10000) 
+    }, 5000);
+    if(currentpage!='inicio'){functionBtnC()}
 } 
 
 
 //CONSULTAS
-setInterval(async function(){
-    function peticionFetch(cad){
-        url='http://127.0.0.1:3000/'+cad;
-        fetch(url,{
-        method: 'GET' }).then(response=>response.json()).then(data=>{
-            if(currentpage == 'inicio') { 
-                most(data, currentpage); 
-            } else if(currentpage == 'histo'){
-                most(data, currentpage);
-            }else if(currentpage == 'registros') { 
-                document.getElementById('tablaRegistros').innerHTML=generaTabla(data);
-                document.getElementById('date').value='';
-                document.getElementById('hour').value=''; 
-                //datos=data;
-            }
-        })
-    }
-}, 5000)
+function peticionFetch(cad){
+    url='http://127.0.0.1:3000/'+cad;
+    fetch(url,{
+    method: 'GET' }).then(response=>response.json()).then(data=>{
+        if(currentpage == 'inicio') { 
+            most(data, currentpage);
+        } else if(currentpage == 'histo'){
+            most(data, currentpage);
+        }else if(currentpage == 'registros') { 
+            document.getElementById('tablaRegistros').innerHTML=generaTabla(data);
+            document.getElementById('date').value='';
+            document.getElementById('hour').value=''; 
+            //datos=data;
+        }
+    })
+}
 
 //GRAFICAS
 function most (datos, page){  
